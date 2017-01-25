@@ -19,17 +19,21 @@
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>S.No</th>
                                     <th>Name</th>
-                                    <th>E-Mail</th>
+                                    <th>Message</th>
+                                    <th>Read</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>Nikhil Verma</td>
-                                    <td>vrmanikhil@gmail.com</td>
+                              <?php $i = 1; foreach ($contactUs as $key => $value) { ?>
+                                  <tr class="odd gradeX">
+                                    <td><?php echo $i++; ?></td>
+                                    <td><?php echo $value['name']; ?></td>
+                                    <td><?php echo substr($value['message'],0,200); ?>&nbsp;<a href="<?php echo base_url('/backoffice/viewContactMessage/').$value['id']; ?>">View</a></td>
+                                    <td><?php if(!empty($value['acknowledge'])){ echo "<button class='btn btn-success'>Read</button>"; } else { ?> <button class='btn btn-danger'>Unread</button><br><a href="<?php echo base_url('/backofficeFunctions/markRead/').$value['id']; ?>">Mark as Read</a> <?php  } ?></td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
             </div>

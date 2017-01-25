@@ -58,10 +58,34 @@ class Data_lib {
 		return $CI->dataModel->getUserPassword($username);
 	}
 
+	public function getTestimonials(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getTestimonials();
+	}
+
+	public function getContactUs(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getContactUs();
+	}
+
 	public function getAboutContent(){
 		$CI = &get_instance();
 		$CI->load->model('data_model','dataModel');
 		return $CI->dataModel->getAboutContent();
+	}
+
+	public function getContactMessage($id){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getContactMessage($id);
+	}
+
+	public function markRead($id){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->markRead($id);
 	}
 
 	public function getHeaderContent(){

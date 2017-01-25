@@ -138,6 +138,18 @@ class BackofficeFunctions extends CI_Controller {
 		redirect(base_url('backoffice'));
 	}
 
+	public function markRead($id = ''){
+		$result = $this->data_lib->markRead($id);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Contact Request Marked as Read','color'=>'green'));
+			redirect(base_url('/backoffice/contactUs'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/backoffice/contactUs'));
+		}
+	}
+
 	public function changePassword(){
 		$current_password = '';
 		$new_password = '';

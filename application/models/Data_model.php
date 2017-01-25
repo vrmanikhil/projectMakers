@@ -25,6 +25,12 @@ class Data_model extends CI_Model {
 		return $this->db->query($query);
 	}
 
+	public function markRead($id){
+		$acknowledge = 1;
+		$query = "UPDATE contactUs SET acknowledge='$acknowledge' WHERE id='$id'";
+		return $this->db->query($query);
+	}
+
 	public function updateHeaderContent($data){
 		$id = '1';
 		$this->db->where('id', $id);
@@ -40,6 +46,23 @@ class Data_model extends CI_Model {
 	public function getUserPassword($username){
 		$result = $this->db->get_where('admin', array('username' => $username));
 		return $result->result_array();
+	}
+
+	public function getContactMessage($id){
+		$result = $this->db->get_where('contactUs', array('id' => $id));
+		return $result->result_array();
+	}
+
+	public function getTestimonials(){
+		$this->db->from('testimonials');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	public function getContactUs(){
+		$this->db->from('contactUs');
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 
 	public function getAboutContent(){
