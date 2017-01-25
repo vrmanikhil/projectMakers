@@ -52,5 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['backoffice/contactUs'] = 'backoffice/contactUs';
+$route['backoffice/manageTeam'] = 'backoffice/manageTeam';
+$route['backoffice/hfContent'] = 'backoffice/hfContent';
+$route['backoffice/aboutContent'] = 'backoffice/aboutContent';
 $route['backoffice/changePassword'] = 'backoffice/changePassword';
 $route['translate_uri_dashes'] = FALSE;

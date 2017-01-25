@@ -40,4 +40,33 @@ class Backoffice extends CI_Controller {
 		}
 	}
 
+	public function manageTeam(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->load->view('backoffice/manageTeam', $this->data);
+		}
+	}
+
+	public function hfContent(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['headerContent'] = $this->data_lib->getHeaderContent();
+			$this->data['headerContent'] = $this->data['headerContent'][0];
+			$this->data['footerContent'] = $this->data_lib->getFooterContent();
+			$this->data['footerContent'] = $this->data['footerContent'][0];
+			$this->load->view('backoffice/hfContent', $this->data);
+		}
+	}
+
+	public function aboutContent(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['about'] = $this->data_lib->getAboutContent();
+			$this->load->view('backoffice/aboutContent', $this->data);
+		}
+	}
+
 	}
