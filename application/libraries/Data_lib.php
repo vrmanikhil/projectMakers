@@ -34,10 +34,70 @@ class Data_lib {
 		return $CI->dataModel->changePassword($password, $username);
 	}
 
+	public function updateAboutParagraph($content, $paragraph){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->updateAboutParagraph($content, $paragraph);
+	}
+
+	public function updateHeaderContent($data){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->updateHeaderContent($data);
+	}
+
+	public function updateFooterContent($data){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->updateFooterContent($data);
+	}
+
 	public function getUserPassword($username){
 		$CI = &get_instance();
 		$CI->load->model('data_model','dataModel');
 		return $CI->dataModel->getUserPassword($username);
+	}
+
+	public function getTestimonials(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getTestimonials();
+	}
+
+	public function getContactUs(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getContactUs();
+	}
+
+	public function getAboutContent(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getAboutContent();
+	}
+
+	public function getContactMessage($id){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getContactMessage($id);
+	}
+
+	public function markRead($id){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->markRead($id);
+	}
+
+	public function getHeaderContent(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getHeaderContent();
+	}
+
+	public function getFooterContent(){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->getFooterContent();
 	}
 
 }

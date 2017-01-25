@@ -29,11 +29,125 @@ class BackofficeFunctions extends CI_Controller {
 		}
 	}
 
+	public function updateAboutParagraph1(){
+		$content = '';
+		if($x = $this->input->post('paragraph1')){
+			$content = $x;
+		}
+		$content = addslashes($content);
+		$paragraph = "paragraph1";
+		$result = $this->data_lib->updateAboutParagraph($content, $paragraph);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Paragraph successfully Updated','color'=>'green'));
+			redirect(base_url('/backoffice/aboutContent'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/aboutContent'));
+		}
+	}
+
+	public function updateAboutParagraph2(){
+		$content = '';
+		if($x = $this->input->post('paragraph2')){
+			$content = $x;
+		}
+		$content = addslashes($content);
+		$paragraph = "paragraph2";
+		$result = $this->data_lib->updateAboutParagraph($content, $paragraph);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Paragraph successfully Updated','color'=>'green'));
+			redirect(base_url('/backoffice/aboutContent'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/aboutContent'));
+		}
+	}
+
+	public function updateHeaderContent(){
+		$headline = '';
+		$email = '';
+		$mobile = '';
+		if($x = $this->input->post('headline')){
+			$headline = $x;
+		}
+		if($x = $this->input->post('email')){
+			$email = $x;
+		}
+		if($x = $this->input->post('mobile')){
+			$mobile = $x;
+		}
+		$headline = addslashes($headline);
+		$data = array(
+			'headline' => $headline,
+			'email' => $email,
+			'mobile' => $mobile
+		);
+		$result = $this->data_lib->updateHeaderContent($data);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Header Content successfully Updated','color'=>'green'));
+			redirect(base_url('/backoffice/hfContent'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/backoffice/hfContent'));
+		}
+	}
+
+	public function updateFooterContent(){
+		$facebook = '';
+		$twitter = '';
+		$instagram = '';
+		$about = '';
+
+		if($x = $this->input->post('facebook')){
+			$facebook = $x;
+		}
+		if($x = $this->input->post('twitter')){
+			$twitter = $x;
+		}
+		if($x = $this->input->post('instagram')){
+			$instagram = $x;
+		}
+		if($x = $this->input->post('about')){
+			$about = $x;
+		}
+		$about = addslashes($about);
+		$data = array(
+			'about' => $about,
+			'facebook' => $facebook,
+			'twitter' => $twitter,
+			'instagram' => $instagram
+		);
+		$result = $this->data_lib->updateFooterContent($data);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Footer Content successfully Updated','color'=>'green'));
+			redirect(base_url('/backoffice/hfContent'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/backoffice/hfContent'));
+		}
+	}
+
 	public function logout(){
 		$this->session->set_userdata('user_data', false);
 		$this->session->set_userdata('user_data', []);
 		$this->session->sess_destroy();
 		redirect(base_url('backoffice'));
+	}
+
+	public function markRead($id = ''){
+		$result = $this->data_lib->markRead($id);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Contact Request Marked as Read','color'=>'green'));
+			redirect(base_url('/backoffice/contactUs'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/backoffice/contactUs'));
+		}
 	}
 
 	public function changePassword(){

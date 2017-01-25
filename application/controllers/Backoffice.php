@@ -28,7 +28,18 @@ class Backoffice extends CI_Controller {
 		if(!$this->data_lib->auth()){
 			$this->load->view('backoffice/login', $this->data);}
 		else{
+			$this->data['contactUs'] = $this->data_lib->getContactUs();
 			$this->load->view('backoffice/contactUs', $this->data);
+		}
+	}
+
+	public function viewContactMessage($id = ''){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['contactMessage'] = $this->data_lib->getContactMessage($id);
+			$this->data['contactMessage'] = $this->data['contactMessage'][0];
+			$this->load->view('backoffice/viewContactMessage', $this->data);
 		}
 	}
 
@@ -37,6 +48,44 @@ class Backoffice extends CI_Controller {
 			$this->load->view('backoffice/login', $this->data);}
 		else{
 			$this->load->view('backoffice/changePassword', $this->data);
+		}
+	}
+
+	public function manageTeam(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->load->view('backoffice/manageTeam', $this->data);
+		}
+	}
+
+	public function hfContent(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['headerContent'] = $this->data_lib->getHeaderContent();
+			$this->data['headerContent'] = $this->data['headerContent'][0];
+			$this->data['footerContent'] = $this->data_lib->getFooterContent();
+			$this->data['footerContent'] = $this->data['footerContent'][0];
+			$this->load->view('backoffice/hfContent', $this->data);
+		}
+	}
+
+	public function aboutContent(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['about'] = $this->data_lib->getAboutContent();
+			$this->load->view('backoffice/aboutContent', $this->data);
+		}
+	}
+
+	public function testimonials(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['testimonials'] = $this->data_lib->getTestimonials();
+			$this->load->view('backoffice/testimonials', $this->data);
 		}
 	}
 
