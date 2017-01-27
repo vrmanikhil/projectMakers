@@ -2,6 +2,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	min-height: 100vh;
 	letter-spacing: 2px;
+	font-size: 18px;
 }
 
 .fixed-width-container {
@@ -12,6 +13,10 @@ body {
 
 p {
 	margin-bottom: 0;
+}
+
+h1 {
+	font-size: 2em;
 }
 
 .flex {
@@ -33,12 +38,14 @@ main {
 	flex-grow: 1;
 }
 
-footer {}
+footer {
+	border-top:1px solid #021d35;
+}
 
 .header-bar {
 	padding: 10px;
 	color: #fff;
-	font-size: 13px;
+	font-size: 0.73em;
 	align-items: center;
 }
 
@@ -70,7 +77,7 @@ footer {}
 
 .header {
 	align-items: center;
-	padding: 20px 15px;
+	padding: 15px 15px 10px;
 }
 
 .header__company-logo {
@@ -83,7 +90,7 @@ footer {}
 	color: #000;
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 0.89em;
 	margin-right: 15px;
 	text-decoration: none;
 }
@@ -96,4 +103,84 @@ footer {}
 
 .header__nav-link:last-child {
 	margin-right: 0;
+}
+
+.header__company-logo > a {
+	display: inline-block;
+}
+
+.footer-section {
+	width: 300px;
+	font-size: 0.89em;
+	margin: 25px 0 35px;
+	flex-shrink: 0;
+	margin-right: 30px;
+}
+
+.footer-section:last-child {
+	margin-right: 0;
+}
+
+.footer__about-us-content,
+.footer-section__title {
+	margin-bottom: 20px;
+}
+
+.footer__about-us-content:last-child {
+	margin-bottom: 0;
+}
+
+.footer-section__title {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #f24c4c;
+}
+
+.footer__quick-link,
+.footer__quick-link:hover,
+.footer__quick-link:focus {
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	margin-bottom: 5px;
+	color: #000;
+}
+
+.footer__quick-link:hover,
+.footer__quick-link:focus {
+	color: #f24c4c;
+}
+
+.footer__social-links {
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.footer__social-link {
+	margin-right: 10px
+}
+
+.subscribe-form__email,
+.subscribe-form__email:focus {
+	border-radius: 0;
+	box-shadow: none;
+	padding: 9px 12px;
+	height: auto;
+	border: 2px solid #f24c4c;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.subscribe-form__btn,
+.subscribe-form__btn:hover,
+.subscribe-form__btn:focus {
+	background-color: #021d35;
+	border-radius: 0;
+	border-color: #021d35;
+	display: block;
+	width: 100%;
+	letter-spacing: 2px;
+	padding: 9px 12px;
+	outline: none;
 }

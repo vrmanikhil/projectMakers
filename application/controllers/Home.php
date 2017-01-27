@@ -13,11 +13,15 @@ class Home extends CI_Controller {
 		$vm['assets'] = [
 			'css' => [
 				'/web-assets/css/bootstrap.min.css',
-				'/web-assets/css/base.css'
+				'/web-assets/css/swiper.min.css',
+				'/web-assets/css/base.css',
+				'/web-assets/css/home.css'
 			],
 			'js' => [
 				'/web-assets/js/jquery.min.js',
-				'/web-assets/js/bootstrap.min.js'
+				'/web-assets/js/swiper.jquery.min.js',
+				'/web-assets/js/bootstrap.min.js',
+				'/web-assets/js/home.js'
 			]
 		];
 		$vm['title'] = 'Home | Makers';

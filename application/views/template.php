@@ -56,7 +56,40 @@
 			<?php echo $body ?>
 			<?php //************ ?>
 		</main>
-		<footer></footer>
+		<footer>
+			<div class="container-fluid fixed-width-container flex footer">
+				<div class="footer__about-us footer-section text-center">
+					<p class="footer-section__title">About us</p>
+					<p class="footer__about-us-content">We are a social initiative based out of Delhi NCR offering Bakery &amp; Confectionary items made by people with special needs. The team is highly trained to create magic to add that extra spark to your day, and a big smile to your face.</p>
+					<p class="footer__about-us-content">We make classic cookies, fresh breads, best cakes in Delhi, and also take orders for gifting and events.</p>
+				</div>
+				<div class="text-center footer-section">
+					<p class="footer-section__title">Know a little more</p>
+					<div class="footer__quick-links text-center">
+						<a class="footer__quick-link" href="javascript:">Who We Are</a>
+						<a class="footer__quick-link" href="javascript:">Menu For Order</a>
+						<a class="footer__quick-link" href="javascript:">Team</a>
+						<a class="footer__quick-link" href="javascript:">Blog</a>
+						<a class="footer__quick-link" href="javascript:">T &amp; C</a>
+						<a class="footer__quick-link" href="javascript:">Contact Us</a>
+					</div>
+				</div>
+				<div class="text-center footer-section">
+					<p class="footer-section__title">Let's be friends!</p>
+					<div class="footer__social-links flex">
+						<a href="javascript:" class="footer__social-link"><img src="/web-assets/image/fb.png"></a>
+						<a href="javascript:" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
+						<a href="javascript:" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
+					</div>
+					<form class="subscribe-form">
+						<div class="form-group">
+							<input type="email" name="email" required class="form-control subscribe-form__email" placeholder="Enter Email Address :)">
+							<input type="submit" name="submit" class="btn btn-primary subscribe-form__btn" value="Subscribe to Newsletter">
+						</div>
+					</form>
+				</div>
+			</div>
+		</footer>
 		<?php //loading js assets ?>
 		<?php $js = isset($assets['js']) ? $assets['js'] : [] ?>
 		<?php foreach ($js as $item):?>
