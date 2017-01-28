@@ -84,6 +84,10 @@
 	bottom: -5px;
 }
 
+.featured-links > div {
+	justify-content: center;
+}
+
 @media(max-width: 768px) {
 	.banner__title {
 		margin-bottom: 20px;
@@ -96,9 +100,6 @@
 	.featured-links {
 		padding: 15px;
 	}
-	.featured-links > div {
-		justify-content: center;
-	}
 	.featured-link__box,
 	.featured-link__box:focus,
 	.featured-link__box:hover,
@@ -107,20 +108,16 @@
 		width: 270px;
 		height: 170px;
 	}
-
 	.testimonials-section {
 		margin: 30px auto;
 		padding: 15px;
 	}
-
 	.swiper-container {
 		padding: 20px 50px;
 	}
-
 	.testimonial {
 		height: auto;
 		min-height: 180px;
 	}
-
 }
 

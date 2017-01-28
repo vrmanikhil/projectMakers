@@ -57,7 +57,7 @@
 								<li <?php echo ($activePage === 'home') ? 'class="active"' : '' ?>><a href="/" class="header__nav-link"> Home </a></li>
 								<li <?php echo ($activePage === 'about') ? 'class="active"' : '' ?>><a href="/about" class="header__nav-link"> About </a></li>
 								<li <?php echo ($activePage === 'orderNow') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Order now </a></li>
-								<li <?php echo ($activePage === 'team') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Team </a></li>
+								<li <?php echo ($activePage === 'team') ? 'class="active"' : '' ?>><a href="/team" class="header__nav-link"> Team </a></li>
 								<li <?php echo ($activePage === 'contact') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Contact </a></li>
 								<li><a href="javascript:" class="header__nav-link"> Blog </a></li>
 							</ul>
@@ -81,9 +81,9 @@
 				<div class="text-center footer-section">
 					<p class="footer-section__title">Know a little more</p>
 					<div class="footer__quick-links text-center">
-						<a class="footer__quick-link" href="javascript:">Who We Are</a>
+						<a class="footer__quick-link" href="/about">Who We Are</a>
 						<a class="footer__quick-link" href="javascript:">Menu For Order</a>
-						<a class="footer__quick-link" href="javascript:">Team</a>
+						<a class="footer__quick-link" href="/team">Team</a>
 						<a class="footer__quick-link" href="javascript:">Blog</a>
 						<a class="footer__quick-link" href="javascript:">T &amp; C</a>
 						<a class="footer__quick-link" href="javascript:">Contact Us</a>

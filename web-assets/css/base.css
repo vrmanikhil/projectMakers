@@ -40,6 +40,11 @@ main {
 
 footer {
 	border-top: 1px solid #021d35;
+	padding: 15px;
+}
+
+.footer {
+	justify-content: center;
 }
 
 .header-bar {
@@ -266,11 +271,6 @@ footer {
 
 	.header-bar__item:last-child {
 		margin-bottom: 0;
-	}
-
-	.footer {
-		justify-content: center;
-		padding: 15px;
 	}
 
 	.footer-section {
