@@ -1,0 +1,13 @@
+.about-txt {
+	padding: 30px 15px;
+	min-height: 30vw;
+}
+
+.about__primary-txt {
+	font-weight: bold;
+	margin: 0 0 50px 0;
+}
+
+.about__secondary-txt {
+	margin: 0;
+}

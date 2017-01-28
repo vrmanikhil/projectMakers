@@ -54,11 +54,11 @@
 						</div>
 						<div class="collapse navbar-collapse" id="main-menu">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="/" class="header__nav-link active"> Home </a></li>
-								<li><a href="javascript:" class="header__nav-link"> About </a></li>
-								<li><a href="javascript:" class="header__nav-link"> Order now </a></li>
-								<li><a href="javascript:" class="header__nav-link"> Team </a></li>
-								<li><a href="javascript:" class="header__nav-link"> Contact </a></li>
+								<li <?php echo ($activePage === 'home') ? 'class="active"' : '' ?>><a href="/" class="header__nav-link"> Home </a></li>
+								<li <?php echo ($activePage === 'about') ? 'class="active"' : '' ?>><a href="/about" class="header__nav-link"> About </a></li>
+								<li <?php echo ($activePage === 'orderNow') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Order now </a></li>
+								<li <?php echo ($activePage === 'team') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Team </a></li>
+								<li <?php echo ($activePage === 'contact') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Contact </a></li>
 								<li><a href="javascript:" class="header__nav-link"> Blog </a></li>
 							</ul>
 						</div>

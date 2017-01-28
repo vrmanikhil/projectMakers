@@ -58,4 +58,5 @@ $route['backoffice/manageTeam'] = 'backoffice/manageTeam';
 $route['backoffice/hfContent'] = 'backoffice/hfContent';
 $route['backoffice/aboutContent'] = 'backoffice/aboutContent';
 $route['backoffice/changePassword'] = 'backoffice/changePassword';
+$route['about'] = 'home/about';
 $route['translate_uri_dashes'] = FALSE;

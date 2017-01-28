@@ -213,6 +213,22 @@ footer {
 	display: none;
 }
 
+.jumbotron-main h1 {
+	font-size: 2em;
+	margin: 10px;
+	color: #fff;
+}
+
+.jumbotron-main {
+	margin: 0;
+	background-color: transparent;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 410px;
+	align-items: center;
+	justify-content: center;
+}
+
 @media(max-width: 960px) {
 	.flex {
 		flex-wrap: wrap;
@@ -261,6 +277,10 @@ footer {
 		width: 100%;
 		max-width: 300px;
 		margin: 20px 0;
+	}
+
+	.jumbotron-main {
+		min-height: 60vw;
 	}
 }
 
