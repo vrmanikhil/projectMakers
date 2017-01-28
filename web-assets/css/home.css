@@ -84,3 +84,42 @@
 	bottom: -5px;
 }
 
+@media(max-width: 768px) {
+	.banner__title {
+		margin-bottom: 20px;
+	}
+	.banner {
+		padding: 25px 15px;
+		min-height: 60vw;
+		height: auto;
+	}
+	.featured-links {
+		padding: 15px;
+	}
+	.featured-links > div {
+		justify-content: center;
+	}
+	.featured-link__box,
+	.featured-link__box:focus,
+	.featured-link__box:hover,
+	.featured-link__box:last-child {
+		margin: 15px;
+		width: 270px;
+		height: 170px;
+	}
+
+	.testimonials-section {
+		margin: 30px auto;
+		padding: 15px;
+	}
+
+	.swiper-container {
+		padding: 20px 50px;
+	}
+
+	.testimonial {
+		height: auto;
+		min-height: 180px;
+	}
+}
+

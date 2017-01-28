@@ -24,12 +24,12 @@
 		<header>
 			<div class="red-bg">
 				<div class="container-fluid fixed-width-container flex header-bar">
-					<p class="header-bar__text">Premium Delights for You. By the Special Ones.</p>
-					<a class="header-bar__email" href="mailto:hello@specialmakers.com">
+					<p class="header-bar__text header-bar__item">Premium Delights for You. By the Special Ones.</p>
+					<a class="header-bar__email header-bar__item" href="mailto:hello@specialmakers.com">
 						<img src="/web-assets/image/email.png">
 						hello@specialmakers.com
 					</a>
-					<p class="header-bar__ph">
+					<p class="header-bar__ph header-bar__item">
 						<img src="/web-assets/image/ph.png">
 						+91 9876543210
 					</p>
@@ -41,13 +41,28 @@
 						<img src="/web-assets/image/logo.png" class="img-responsive">
 					</a>
 				</div>
-				<nav class="flex header__nav">
-					<a href="/" class="header__nav-link active"> Home </a>
-					<a href="javascript:" class="header__nav-link"> About </a>
-					<a href="javascript:" class="header__nav-link"> Order now </a>
-					<a href="javascript:" class="header__nav-link"> Team </a>
-					<a href="javascript:" class="header__nav-link"> Contact </a>
-					<a href="javascript:" class="header__nav-link"> Blog </a>
+				<nav class="navbar navbar-default header__nav">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="javascript:">Menu</a>
+						</div>
+						<div class="collapse navbar-collapse" id="main-menu">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="/" class="header__nav-link active"> Home </a></li>
+								<li><a href="javascript:" class="header__nav-link"> About </a></li>
+								<li><a href="javascript:" class="header__nav-link"> Order now </a></li>
+								<li><a href="javascript:" class="header__nav-link"> Team </a></li>
+								<li><a href="javascript:" class="header__nav-link"> Contact </a></li>
+								<li><a href="javascript:" class="header__nav-link"> Blog </a></li>
+							</ul>
+						</div>
+					</div>
 				</nav>
 			</div>
 		</header>
