@@ -367,6 +367,41 @@ class BackofficeFunctions extends CI_Controller {
 		}
 	}
 
+	public function updateMenuItemImage(){
+		$imageURL = '';
+		$itemID = '';
+		if($x = $this->input->post('itemID')){
+			$itemID = $x;
+		}
+
+		$this->load->library('upload');
+		$config['upload_path'] = 'assets/images/menu';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png|JPG';
+		$config['max_size']	= '1000';
+		$config['max_width'] = '300';
+		$config['min_width'] = '250';
+		$config['max_height'] = '200';
+		$config['min_height'] = '175';
+		$this->upload->initialize($config);
+		$this->upload->do_upload('image');
+		$x = $this->upload->data();
+		$x['file_name'] = $x['file_name'];
+		$imageURL = 'assets/images/menu/'.$x['file_name'];
+
+		$data = array(
+			'imageURL' => $imageURL
+		);
+		$result = $this->data_lib->addMenuItem($data, $itemID);
+		if($result){
+			$this->session->set_flashdata('message', array('content'=>'Menu Item Image successfully Updated','color'=>'green'));
+			redirect(base_url('/backoffice/menuItems'));
+		}
+		else{
+			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong, Please Try Again','color'=>'red'));
+			redirect(base_url('/backoffice/menuItems'));
+		}
+	}
+
 	public function addTestimonial(){
 		$name = '';
 		$testimonial = '';

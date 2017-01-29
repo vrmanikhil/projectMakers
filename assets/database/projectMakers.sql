@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 29, 2017 at 06:12 PM
+-- Generation Time: Jan 29, 2017 at 07:55 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -80,7 +80,8 @@ CREATE TABLE `contactUs` (
 --
 
 INSERT INTO `contactUs` (`id`, `name`, `email`, `mobile`, `message`, `acknowledge`, `timestamp`) VALUES
-(1, 'Nikhil Verma', 'vrmanikhil@gmail.com', 7503705892, 'Good MOrning makers', 1, '2017-01-28 21:58:07');
+(1, 'Nikhil Verma', 'vrmanikhil@gmail.com', 7503705892, 'Good MOrning makers', 1, '2017-01-28 21:58:07'),
+(2, 'Nikhil', 'vrmanikhil@gmail.com', 7503705892, 'Hello PC', 1, '2017-01-29 12:55:03');
 
 -- --------------------------------------------------------
 
@@ -192,8 +193,11 @@ CREATE TABLE `menuCategories` (
 --
 
 INSERT INTO `menuCategories` (`id`, `name`, `description`) VALUES
-(2, 'Cakewa', '<p>This is cakewa</p>'),
-(3, 'New Category it is', '<p>New Category it is</p>');
+(4, 'Cookies', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'),
+(5, 'Cakes', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'),
+(6, 'Breads', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'),
+(7, 'Savoury Treats', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'),
+(8, 'Chocolates', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>');
 
 -- --------------------------------------------------------
 
@@ -224,16 +228,22 @@ CREATE TABLE `menuItems` (
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `categoryID` int(3) NOT NULL,
-  `startsFrom` int(5) NOT NULL
+  `startsFrom` int(5) NOT NULL,
+  `imageURL` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `menuItems`
 --
 
-INSERT INTO `menuItems` (`itemID`, `name`, `description`, `categoryID`, `startsFrom`) VALUES
-(4, 'Parle G', '<p>Parle G</p>', 1, 150),
-(5, '50-50', '<p>50-50</p>', 1, 10);
+INSERT INTO `menuItems` (`itemID`, `name`, `description`, `categoryID`, `startsFrom`, `imageURL`) VALUES
+(8, 'Chocochip Cookies', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 4, 150, 'assets/images/menu/product.png'),
+(9, 'Parle G', '<p>This is our favourite Parle G</p>', 4, 10, 'assets/images/menu/product1.png'),
+(10, 'Good Day', '<p>This is the britannia Good Day is our special flavour</p>', 4, 30, 'assets/images/menu/product2.png'),
+(11, 'Banana Cake', '<p>This is our Banana Cake</p>', 5, 250, 'assets/images/menu/product3.png'),
+(12, 'Marie Gold', '<p>This is our Marie Gold</p>', 4, 20, 'assets/images/menu/product4.png'),
+(13, 'Plum Cake', '<p>Plum Cake it is</p>', 5, 200, 'assets/images/menu/product5.png'),
+(14, 'Dark', '<p>Dark Chocolate it is</p>', 8, 900, 'assets/images/menu/product6.png');
 
 -- --------------------------------------------------------
 
@@ -253,7 +263,9 @@ CREATE TABLE `newsletters` (
 
 INSERT INTO `newsletters` (`id`, `email`, `timestamp`) VALUES
 (1, 'vrmanikhil@gmail.com', '2017-01-28 18:21:59'),
-(2, 'prashantp099@gmail.com', '2017-01-28 18:22:11');
+(2, 'prashantp099@gmail.com', '2017-01-28 18:22:11'),
+(3, 'hello@campuspuppy.com', '2017-01-29 14:02:29'),
+(4, 'nikhilverma@campuspuppy.com', '2017-01-29 14:14:09');
 
 -- --------------------------------------------------------
 
@@ -402,7 +414,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `contactUs`
 --
 ALTER TABLE `contactUs`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `images`
 --
@@ -412,17 +424,17 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `menuCategories`
 --
 ALTER TABLE `menuCategories`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `menuItems`
 --
 ALTER TABLE `menuItems`
-  MODIFY `itemID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `itemID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `newsletters`
 --
 ALTER TABLE `newsletters`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `team`
 --
