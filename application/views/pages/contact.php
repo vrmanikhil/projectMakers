@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-main jumbotron-fluid flex" style="background-image: url('/web-assets/image/contact-banner.png')">
+<div class="jumbotron jumbotron-main jumbotron-fluid flex" style="background-image: url('<?php echo base_url().$images[8]['imageURL']; ?>')">
 	<div class="container-fluid fixed-width-container">
 		<section class="contact">
 			<h1 class="text-center">HEY THERE!</h1>
@@ -9,10 +9,10 @@
 					<input type="text" class="form-control" required name="name" placeholder="Name" autocomplete="name">
 				</div>
 				<div class="form-group">
-					<input type="email" class="form-control" required name="email" placeholder="Email Id" autocomplete="email">
+					<input type="email" class="form-control" required name="email" placeholder="Email Address" autocomplete="email">
 				</div>
 				<div class="form-group">
-					<input type="tel" name="phone" autocomplete="tel" pattern="[0-9]{10}" maxlength="10" class="form-control" placeholder="Contact No.">
+					<input type="tel" name="phone" autocomplete="tel" pattern="[0-9]{10}" maxlength="10" class="form-control" placeholder="Contact Number">
 				</div>
 				<div class="form-group">
 					<textarea rows="7" required name="message" class="form-control" placeholder="Your Message"></textarea>

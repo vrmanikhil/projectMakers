@@ -29,7 +29,7 @@
                       <div class="control-group form-group">
                           <div class="controls">
                               <label>Testimonial:</label>
-                              <textarea class="form-control" rows="10" id="testimonial" name="testimonial" required><?php echo $testimonial['testimonial']; ?></textarea>
+                              <textarea class="form-control" rows="10" id="testimonial" name="testimonial" required><?php echo stripslashes($testimonial['testimonial']); ?></textarea>
                               <p class="help-block"></p>
                           </div>
                       </div>
@@ -64,12 +64,7 @@
        });
    });
    </script>
-   <script src="<?= base_url('assets/ckeditor/ckeditor.js')?>"></script>
-   <script>
-     $(document).ready(function(){
-       editor = CKEDITOR.replace('testimonial');
-     });
-     </script>
+
 
 </body>
 

@@ -6,6 +6,11 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper(array('url'));
+		$this->load->library(array('data_lib','session'));
+		$this->data = array();
+		$this->data['csrf_token_name'] = $this->security->get_csrf_token_name();
+		$this->data['csrf_token'] = $this->security->get_csrf_hash();
 	}
 
 	public function index()
@@ -26,7 +31,15 @@ class Home extends CI_Controller {
 		];
 		$vm['title'] = 'Home | Makers';
 		$vm['activePage'] = 'home';
-		$vm['body'] = $this->load->view('pages/home', '', TRUE);
+		$home['home'] = $this->data_lib->getHomeContent();
+		$home['home'] = $home['home'][0];
+		$home['images'] = $this->data_lib->getImages();
+		$home['testimonials'] = $this->data_lib->getTestimonials();
+		$vm['body'] = $this->load->view('pages/home', $home, TRUE);
+		$vm['headerContent'] = $this->data_lib->getHeaderContent();
+		$vm['headerContent'] = $vm['headerContent'][0];
+		$vm['footerContent'] = $this->data_lib->getFooterContent();
+		$vm['footerContent'] = $vm['footerContent'][0];
 		$this->load->view('template', $vm);
 	}
 
@@ -45,7 +58,13 @@ class Home extends CI_Controller {
 		];
 		$vm['title'] = 'About | Makers';
 		$vm['activePage'] = 'about';
-		$vm['body'] = $this->load->view('pages/about', '', TRUE);
+		$about['images'] = $this->data_lib->getImages();
+		$about['about'] = $this->data_lib->getAboutContent();
+		$vm['body'] = $this->load->view('pages/about', $about, TRUE);
+		$vm['headerContent'] = $this->data_lib->getHeaderContent();
+		$vm['headerContent'] = $vm['headerContent'][0];
+		$vm['footerContent'] = $this->data_lib->getFooterContent();
+		$vm['footerContent'] = $vm['footerContent'][0];
 		$this->load->view('template', $vm);
 	}
 
@@ -64,7 +83,15 @@ class Home extends CI_Controller {
 		];
 		$vm['title'] = 'Team | Makers';
 		$vm['activePage'] = 'team';
-		$vm['body'] = $this->load->view('pages/team', '', TRUE);
+		$team['images'] = $this->data_lib->getImages();
+		$team['teamContent'] = $this->data_lib->getTeamContent();
+		$team['teamContent'] = $team['teamContent'][0]['content'];
+		$team['team'] = $this->data_lib->getTeam();
+		$vm['body'] = $this->load->view('pages/team', $team, TRUE);
+		$vm['headerContent'] = $this->data_lib->getHeaderContent();
+		$vm['headerContent'] = $vm['headerContent'][0];
+		$vm['footerContent'] = $this->data_lib->getFooterContent();
+		$vm['footerContent'] = $vm['footerContent'][0];
 		$this->load->view('template', $vm);
 	}
 
@@ -83,7 +110,12 @@ class Home extends CI_Controller {
 		];
 		$vm['title'] = 'Contact Us | Makers';
 		$vm['activePage'] = 'contact';
-		$vm['body'] = $this->load->view('pages/contact', '', TRUE);
+		$contact['images'] = $this->data_lib->getImages();
+		$vm['body'] = $this->load->view('pages/contact', $contact, TRUE);
+		$vm['headerContent'] = $this->data_lib->getHeaderContent();
+		$vm['headerContent'] = $vm['headerContent'][0];
+		$vm['footerContent'] = $this->data_lib->getFooterContent();
+		$vm['footerContent'] = $vm['footerContent'][0];
 		$this->load->view('template', $vm);
 	}
 

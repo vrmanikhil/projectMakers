@@ -149,10 +149,10 @@ class BackofficeFunctions extends CI_Controller {
 	 	 $config['upload_path'] = 'assets/images/team';
 	 	 $config['allowed_types'] = 'gif|jpg|jpeg|png|JPG';
 	 	 $config['max_size']	= '1000';
-	 	 $config['max_width'] = '800';
-	 	 $config['min_width'] = '500';
-	 	 $config['max_height'] = '800';
-	 	 $config['min_height'] = '500';
+	 	 $config['max_width'] = '300';
+	 	 $config['min_width'] = '270';
+	 	 $config['max_height'] = '300';
+	 	 $config['min_height'] = '270';
 	 	 $this->upload->initialize($config);
 	 	 $this->upload->do_upload('image');
 	 	 $x = $this->upload->data();
@@ -362,6 +362,7 @@ class BackofficeFunctions extends CI_Controller {
 		if($x = $this->input->post('testimonial')){
 			$testimonial = $x;
 		}
+		$testimonial = addslashes($testimonial);
 		$data = array(
 			'name' => $name,
 			'testimonial' => $testimonial
@@ -519,10 +520,10 @@ class BackofficeFunctions extends CI_Controller {
 	 	 $config['upload_path'] = 'assets/images/team';
 	 	 $config['allowed_types'] = 'gif|jpg|jpeg|png|JPG';
 	 	 $config['max_size']	= '1000';
-	 	 $config['max_width'] = '800';
-	 	 $config['min_width'] = '500';
-	 	 $config['max_height'] = '800';
-	 	 $config['min_height'] = '500';
+	 	 $config['max_width'] = '300';
+	 	 $config['min_width'] = '270';
+	 	 $config['max_height'] = '300';
+	 	 $config['min_height'] = '270';
 	 	 $this->upload->initialize($config);
 	 	 $this->upload->do_upload('image');
 	 	 $x = $this->upload->data();
