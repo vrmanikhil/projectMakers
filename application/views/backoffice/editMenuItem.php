@@ -56,6 +56,25 @@
                       <center><button type="submit" class="btn btn-success">Update</button></center>
                   </form>
                 </div>
+                <h3>Update Menu Item Image</h3>
+                <div class="col-sm-12">
+                  <div class="col-sm-7">
+                    <img src="<?php echo base_url().$itemData['imageURL']; ?>" class="img-responsive">
+                  </div>
+                  <div class="col-sm-5">
+                  <form action="<?php echo base_url('backofficeFunctions/updateMenuItemImage'); ?>" method="post" enctype="multipart/form-data">
+                      <div class="control-group form-group">
+                          <div class="controls">
+                              <label>New Image:</label>
+                              <input type="file" class="form-control" name="image" required>
+                              <p class="help-block">Minimum Width: 250px, Maximum Width: 300px, Minimum Height: 175 px, Maximum Height: 200px</p>
+                          </div>
+                      </div>
+                      <input type="hidden" name="itemID" value="<?php echo $itemData['itemID']; ?>">
+                      <input type="hidden" name="<?php echo $csrf_token_name; ?>" value="<?php echo $csrf_token; ?>">
+                      <center><button type="submit" class="btn btn-success">Update</button></center>
+                  </form>
+                </div>
             </div>
         </div>
 
