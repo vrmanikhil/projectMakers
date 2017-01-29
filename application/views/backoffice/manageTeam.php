@@ -78,7 +78,7 @@
                                 <div class="controls">
                                     <label>Image:</label>
                                     <input type="file" class="form-control" name="image" required>
-                                    <p class="help-block"></p>
+                                    <p class="help-block">Minimum Width: 270px; Maximum Width: 300px; Minimum Height: 270 px; Maximum Height: 300px</p>
                                 </div>
                             </div>
                             <div class="control-group form-group">

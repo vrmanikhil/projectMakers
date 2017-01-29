@@ -32,7 +32,7 @@
                                 <tr class="odd gradeX">
                                     <td><?php echo $i++; ?></td>
                                     <td><?php echo $value['name']; ?></td>
-                                    <td><?php echo $value['testimonial']; ?></td>
+                                    <td><?php echo stripslashes($value['testimonial']); ?></td>
                                     <td><a href="<?php echo base_url('/backoffice/editTestimonial/').$value['id']; ?>" class="btn btn-success">Edit</a></td>
                                     <td><a onclick="if(!confirm('Are you sure you want to delete the testimonial?')){return false};" href="<?php echo base_url('/backofficeFunctions/deleteTestimonial/').$value['id']; ?>" class="btn btn-danger">Delete</a></td>
                                 </tr>
@@ -91,12 +91,7 @@
    });
    </script>
 
-   <script src="<?= base_url('assets/ckeditor/ckeditor.js')?>"></script>
-   <script>
-     $(document).ready(function(){
-       editor = CKEDITOR.replace('testimonial');
-     });
-     </script>
+
 
 </body>
 

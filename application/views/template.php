@@ -24,14 +24,14 @@
 		<header>
 			<div class="red-bg">
 				<div class="container-fluid fixed-width-container flex header-bar">
-					<p class="header-bar__text header-bar__item">Premium Delights for You. By the Special Ones.</p>
-					<a class="header-bar__email header-bar__item" href="mailto:hello@specialmakers.com">
+					<p class="header-bar__text header-bar__item"><?php echo $headerContent['headline']; ?></p>
+					<a class="header-bar__email header-bar__item" href="mailto:<?php echo $headerContent['email']; ?>">
 						<img src="/web-assets/image/email.png">
-						hello@specialmakers.com
+						<?php echo $headerContent['email']; ?>
 					</a>
 					<p class="header-bar__ph header-bar__item">
 						<img src="/web-assets/image/ph.png">
-						+91 9876543210
+						+91 <?php echo $headerContent['mobile']; ?>
 					</p>
 				</div>
 			</div>
@@ -75,8 +75,7 @@
 			<div class="container-fluid fixed-width-container flex footer">
 				<div class="footer__about-us footer-section text-center">
 					<p class="footer-section__title">About us</p>
-					<p class="footer__about-us-content">We are a social initiative based out of Delhi NCR offering Bakery &amp; Confectionary items made by people with special needs. The team is highly trained to create magic to add that extra spark to your day, and a big smile to your face.</p>
-					<p class="footer__about-us-content">We make classic cookies, fresh breads, best cakes in Delhi, and also take orders for gifting and events.</p>
+					<p class="footer__about-us-content"><?php echo $footerContent['about']; ?></p>
 				</div>
 				<div class="text-center footer-section">
 					<p class="footer-section__title">Know a little more</p>
@@ -92,9 +91,9 @@
 				<div class="text-center footer-section">
 					<p class="footer-section__title">Let's be friends!</p>
 					<div class="footer__social-links flex">
-						<a href="javascript:" class="footer__social-link"><img src="/web-assets/image/fb.png"></a>
-						<a href="javascript:" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
-						<a href="javascript:" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
+						<a href="<?php echo $footerContent['facebook']; ?>" class="footer__social-link"><img src="/web-assets/image/fb.png"></a>
+						<a href="<?php echo $footerContent['twitter']; ?>" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
+						<a href="<?php echo $footerContent['instagram']; ?>" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
 					</div>
 					<form class="subscribe-form">
 						<div class="form-group">
