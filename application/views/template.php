@@ -95,9 +95,10 @@
 						<a href="<?php echo $footerContent['twitter']; ?>" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
 						<a href="<?php echo $footerContent['instagram']; ?>" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
 					</div>
-					<form class="subscribe-form">
+					<form class="subscribe-form" method="post" action="<?php echo base_url('/home/subscribeNewsletter') ?>">
 						<div class="form-group">
 							<input type="email" name="email" required class="form-control subscribe-form__email" placeholder="Enter Email Address :)">
+							<input type="hidden" name="<?php echo $csrf_token_name; ?>" value="<?php echo $csrf_token; ?>">
 							<input type="submit" name="submit" class="btn btn-primary subscribe-form__btn" value="Subscribe to Newsletter">
 						</div>
 					</form>

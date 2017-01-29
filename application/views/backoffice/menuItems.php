@@ -44,7 +44,7 @@
                       </div>
                       <div class="col-sm-12">
                         <h3>Add New Menu Item</h3>
-                        <form action="<?php echo base_url('backofficeFunctions/addMenuItem'); ?>" method="post">
+                        <form action="<?php echo base_url('backofficeFunctions/addMenuItem'); ?>" method="post" enctype="multipart/form-data">
                             <div class="control-group form-group">
                                 <div class="controls">
                                     <label>Item Name:</label>
@@ -68,6 +68,13 @@
                                       <?php } ?>
                                     </select>
                                     <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="control-group form-group">
+                                <div class="controls">
+                                    <label>Item Image:</label>
+                                    <input type="file" class="form-control" name="image" required>
+                                    <p class="help-block">Minimum Width: 250px, Maximum Width: 300px, Minimum Height: 175 px, Maximum Height: 200px</p>
                                 </div>
                             </div>
                             <div class="control-group form-group">

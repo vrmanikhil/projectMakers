@@ -142,6 +142,11 @@ class Data_model extends CI_Model {
 		return $result->result_array();
 	}
 
+	public function emailExist($email){
+		$result = $this->db->get_where('newsletters', array('email' => $email));
+		return $result->result_array();
+	}
+
 	public function getItemData($id){
 		$result = $this->db->get_where('menuItems', array('itemID' => $id));
 		return $result->result_array();
@@ -213,6 +218,10 @@ class Data_model extends CI_Model {
 		return $this->db->insert('contactUs',$data);
 	}
 
+	public function subscribeNewsletter($data){
+		return $this->db->insert('newsletters',$data);
+	}
+
 	public function addMenuItem($data){
 		return $this->db->insert('menuItems',$data);
 	}
@@ -232,7 +241,7 @@ class Data_model extends CI_Model {
 	}
 
 	public function getMenuItems(){
-		$query = "SELECT menuItems.itemID, menuItems.name AS itemName, menuCategories.name AS category, menuCategories.id AS categoryID, menuItems.startsFrom FROM menuItems JOIN menuCategories ON menuItems.categoryID=menuCategories.id";
+		$query = "SELECT menuItems.itemID, menuItems.description AS itemDescription, menuItems.name AS itemName, menuItems.imageURL, menuCategories.name AS category, menuCategories.id AS categoryID, menuItems.startsFrom FROM menuItems JOIN menuCategories ON menuItems.categoryID=menuCategories.id";
 		$result = $this->db->query($query);
 		return $result->result_array();
 	}

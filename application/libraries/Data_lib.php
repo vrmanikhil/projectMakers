@@ -34,6 +34,12 @@ class Data_lib {
 		return $CI->dataModel->changePassword($password, $username);
 	}
 
+	public function emailExist($email){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->emailExist($email);
+	}
+
 	public function updateAboutParagraph($content, $paragraph){
 		$CI = &get_instance();
 		$CI->load->model('data_model','dataModel');
@@ -248,6 +254,12 @@ class Data_lib {
 		$CI = &get_instance();
 		$CI->load->model('data_model','dataModel');
 		return $CI->dataModel->contactUs($data);
+	}
+
+	public function subscribeNewsletter($data){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->subscribeNewsletter($data);
 	}
 
 	public function addTestimonial($data){

@@ -321,6 +321,7 @@ class BackofficeFunctions extends CI_Controller {
 		$description = '';
 		$categoryID = '';
 		$startsFrom = '';
+		$imageURL = '';
 
 		if($x = $this->input->post('name')){
 			$name = $x;
@@ -334,12 +335,26 @@ class BackofficeFunctions extends CI_Controller {
 		if($x = $this->input->post('categoryID')){
 			$categoryID = $x;
 		}
+		$this->load->library('upload');
+		$config['upload_path'] = 'assets/images/menu';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png|JPG';
+		$config['max_size']	= '1000';
+		$config['max_width'] = '300';
+		$config['min_width'] = '250';
+		$config['max_height'] = '200';
+		$config['min_height'] = '175';
+		$this->upload->initialize($config);
+		$this->upload->do_upload('image');
+		$x = $this->upload->data();
+		$x['file_name'] = $x['file_name'];
+		$imageURL = 'assets/images/menu/'.$x['file_name'];
 
 		$data = array(
 			'name' => $name,
 			'description' => $description,
 			'categoryID' => $categoryID,
-			'startsFrom' => $startsFrom
+			'startsFrom' => $startsFrom,
+			'imageURL' => $imageURL
 		);
 		$result = $this->data_lib->addMenuItem($data);
 		if($result){
