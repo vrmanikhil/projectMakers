@@ -68,4 +68,23 @@ class Home extends CI_Controller {
 		$this->load->view('template', $vm);
 	}
 
+	public function contact()
+	{
+		$vm['assets'] = [
+			'css' => [
+				'/web-assets/css/bootstrap.min.css',
+				'/web-assets/css/base.css',
+				'/web-assets/css/contact.css'
+			],
+			'js' => [
+				'/web-assets/js/jquery.min.js',
+				'/web-assets/js/bootstrap.min.js'
+			]
+		];
+		$vm['title'] = 'Contact Us | Makers';
+		$vm['activePage'] = 'contact';
+		$vm['body'] = $this->load->view('pages/contact', '', TRUE);
+		$this->load->view('template', $vm);
+	}
+
 }

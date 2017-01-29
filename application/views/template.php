@@ -58,7 +58,7 @@
 								<li <?php echo ($activePage === 'about') ? 'class="active"' : '' ?>><a href="/about" class="header__nav-link"> About </a></li>
 								<li <?php echo ($activePage === 'orderNow') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Order now </a></li>
 								<li <?php echo ($activePage === 'team') ? 'class="active"' : '' ?>><a href="/team" class="header__nav-link"> Team </a></li>
-								<li <?php echo ($activePage === 'contact') ? 'class="active"' : '' ?>><a href="javascript:" class="header__nav-link"> Contact </a></li>
+								<li <?php echo ($activePage === 'contact') ? 'class="active"' : '' ?>><a href="/contact" class="header__nav-link"> Contact </a></li>
 								<li><a href="javascript:" class="header__nav-link"> Blog </a></li>
 							</ul>
 						</div>
@@ -86,7 +86,7 @@
 						<a class="footer__quick-link" href="/team">Team</a>
 						<a class="footer__quick-link" href="javascript:">Blog</a>
 						<a class="footer__quick-link" href="javascript:">T &amp; C</a>
-						<a class="footer__quick-link" href="javascript:">Contact Us</a>
+						<a class="footer__quick-link" href="/contact">Contact Us</a>
 					</div>
 				</div>
 				<div class="text-center footer-section">

@@ -124,12 +124,6 @@ footer {
 	margin-bottom: 0;
 }
 
-/*.header__nav-link.active,
-.header__nav-link:hover,
-.header__nav-link:focus {
-	color: #f24c4c;
-}*/
-
 .header__nav-link:last-child {
 	margin-right: 0;
 }
@@ -281,6 +275,10 @@ footer {
 
 	.jumbotron-main {
 		min-height: 60vw;
+	}
+
+	.header {
+		padding: 15px;
 	}
 }
 
