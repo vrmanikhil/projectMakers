@@ -18,6 +18,15 @@
 					<textarea rows="7" required name="message" class="form-control" placeholder="Your Message"></textarea>
 				</div>
 				<input type="hidden" name="<?php echo $csrf_token_name; ?>" value="<?php echo $csrf_token; ?>">
+				<?php
+					if (isset($message)) {
+					$cls = ($message['color'] === 'green') ? 'text-success' : '';
+					$cls = ($message['color'] === 'red') ? 'text-danger' : $cls;
+				?>
+					<p class="<?php echo $cls ?> text-center contact-us__message"><?php echo $message['content'] ?></p>
+				<?php
+					}
+				?>
 				<input type="submit" name="Submit" class="btn btn-primary">
 			</form>
 		</section>

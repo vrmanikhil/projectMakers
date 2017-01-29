@@ -6,7 +6,7 @@
 }
 
 .team-members {
-	margin: 30px auto 60px;
+	margin: 30px -15px 60px;
 	justify-content: center;
 }
 
@@ -48,5 +48,5 @@
 }
 
 .team-member {
-	margin: 25px 15px;
+	margin: 25px 10px;
 }

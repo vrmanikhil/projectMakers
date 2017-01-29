@@ -75,6 +75,10 @@
   color: #333;
 }
 
+.contact-us__message {
+	margin-bottom: -25.5px !important;
+}
+
 @media(max-width: 480px) {
 	.contact {
 		padding: 20px 30px;
