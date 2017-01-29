@@ -18,11 +18,11 @@
                 <h2>Manage Team</h2>
                 <div class="col-sm-12">
                   <h3>Page Description</h3>
-                  <form action="<?php echo base_url('backofficeFunctions/changePassword'); ?>" method="post">
+                  <form action="<?php echo base_url('backofficeFunctions/updateTeamDescription'); ?>" method="post">
                       <div class="control-group form-group">
                           <div class="controls">
                               <label>Description:</label>
-                              <textarea class="form-control" name="description" required></textarea>
+                              <textarea class="form-control" rows="10" id="description" name="description" required><?php echo stripslashes($teamContent); ?></textarea>
                               <p class="help-block"></p>
                           </div>
                       </div>
@@ -44,19 +44,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              <?php $i=1; foreach ($team as $key => $value) { ?>
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>Nikhil Verma</td>
-                                    <td>Baker</td>
-                                    <td><a class="btn btn-success">Edit</a></td>
-                                    <td><a class="btn btn-danger">Delete</a></td>
+                                    <td><?php echo $i++; ?></td>
+                                    <td><?php echo $value['name']; ?></td>
+                                    <td><?php echo $value['role'] ?></td>
+                                    <td><a href="<?php echo base_url('/backoffice/editTeamMember/').$value['id']; ?>" class="btn btn-success">Edit</a></td>
+                                    <td><a onclick="if(!confirm('Are you sure you want to delete the Team Member?')){return false};" href="<?php echo base_url('/backofficeFunctions/deleteTeamMember/').$value['id']; ?>" class="btn btn-danger">Delete</a></td>
+
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                       </div>
                       <div class="col-sm-12">
                         <h3>Add New Team Member</h3>
-                        <form action="<?php echo base_url('backofficeFunctions/changePassword'); ?>" method="post">
+                        <form action="<?php echo base_url('backofficeFunctions/addTeamMember'); ?>" method="post" enctype="multipart/form-data">
                             <div class="control-group form-group">
                                 <div class="controls">
                                     <label>Name:</label>
@@ -73,8 +76,15 @@
                             </div>
                             <div class="control-group form-group">
                                 <div class="controls">
+                                    <label>Image:</label>
+                                    <input type="file" class="form-control" name="image" required>
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="control-group form-group">
+                                <div class="controls">
                                     <label>Description:</label>
-                                    <textarea class="form-control" name="description" required></textarea>
+                                    <textarea class="form-control" id="description1" rows="10" name="description" required></textarea>
                                     <p class="help-block"></p>
                                 </div>
                             </div>
@@ -111,6 +121,13 @@
        });
    });
    </script>
+   <script src="<?= base_url('assets/ckeditor/ckeditor.js')?>"></script>
+   <script>
+     $(document).ready(function(){
+       editor = CKEDITOR.replace('description');
+       editor = CKEDITOR.replace('description1');
+     });
+     </script>
 
 </body>
 

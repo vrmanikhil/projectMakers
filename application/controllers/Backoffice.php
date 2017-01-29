@@ -51,11 +51,86 @@ class Backoffice extends CI_Controller {
 		}
 	}
 
+	public function menuCategories(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['menuCategories'] = $this->data_lib->getMenuCategories();
+			$this->data['mobileNumber'] = $this->data_lib->getMenuMobile();
+			$this->data['mobileNumber'] = $this->data['mobileNumber'][0]['contact'];
+			$this->load->view('backoffice/menuCategories', $this->data);
+		}
+	}
+
+	public function menuItems(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['menuCategories'] = $this->data_lib->getMenuCategories();
+			$this->data['menuItems'] = $this->data_lib->getMenuItems();
+			// var_dump($this->data['menuItems']);die;
+			$this->load->view('backoffice/menuItems', $this->data);
+		}
+	}
+
+	public function editMenuCategory($id=''){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['categoryData'] = $this->data_lib->getCategoryData($id);
+			$this->data['categoryData'] = $this->data['categoryData'][0];
+			$this->load->view('backoffice/editMenuCategory', $this->data);
+		}
+	}
+
+	public function editMenuItem($id=''){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['itemData'] = $this->data_lib->getItemData($id);
+			$this->data['itemData'] = $this->data['itemData'][0];
+			$this->data['menuCategories'] = $this->data_lib->getMenuCategories();
+			$this->load->view('backoffice/editMenuItem', $this->data);
+		}
+	}
+
+	public function editTestimonial($id=''){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['testimonial'] = $this->data_lib->getTestimonial($id);
+			$this->data['testimonial'] = $this->data['testimonial'][0];
+			$this->load->view('backoffice/editTestimonial', $this->data);
+		}
+	}
+
+	public function editTeamMember($id=''){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['teamMember'] = $this->data_lib->getTeamMember($id);
+			$this->data['teamMember'] = $this->data['teamMember'][0];
+			$this->load->view('backoffice/editTeamMember', $this->data);
+		}
+	}
+
 	public function manageTeam(){
 		if(!$this->data_lib->auth()){
 			$this->load->view('backoffice/login', $this->data);}
 		else{
+			$this->data['teamContent'] = $this->data_lib->getTeamContent();
+			$this->data['teamContent'] = $this->data['teamContent'][0]['content'];
+			$this->data['team'] = $this->data_lib->getTeam();
 			$this->load->view('backoffice/manageTeam', $this->data);
+		}
+	}
+
+	public function manageImages(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['images'] = $this->data_lib->getImages();
+			$this->load->view('backoffice/manageImages', $this->data);
 		}
 	}
 
@@ -80,12 +155,31 @@ class Backoffice extends CI_Controller {
 		}
 	}
 
+	public function homeContent(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['home'] = $this->data_lib->getHomeContent();
+			$this->data['home'] = $this->data['home'][0];
+			$this->load->view('backoffice/homeContent', $this->data);
+		}
+	}
+
 	public function testimonials(){
 		if(!$this->data_lib->auth()){
 			$this->load->view('backoffice/login', $this->data);}
 		else{
 			$this->data['testimonials'] = $this->data_lib->getTestimonials();
 			$this->load->view('backoffice/testimonials', $this->data);
+		}
+	}
+
+	public function newsletterSubscribers(){
+		if(!$this->data_lib->auth()){
+			$this->load->view('backoffice/login', $this->data);}
+		else{
+			$this->data['subscribers'] = $this->data_lib->getSubscribers();
+			$this->load->view('backoffice/newsletterSubscribers', $this->data);
 		}
 	}
 

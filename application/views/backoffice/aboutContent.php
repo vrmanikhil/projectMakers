@@ -21,7 +21,7 @@
                       <div class="control-group form-group">
                           <div class="controls">
                               <label>Paragraph 1:</label>
-                              <textarea class="form-control" name="paragraph1" rows="10" required><?php echo stripslashes($about[0]['content']); ?></textarea>
+                              <textarea id="paragraph1" class="form-control" name="paragraph1" rows="10" required><?php echo $about[0]['content']; ?></textarea>
                               <p class="help-block"></p>
                           </div>
                       </div>
@@ -38,7 +38,7 @@
                       <div class="control-group form-group">
                           <div class="controls">
                               <label>Paragraph 2:</label>
-                              <textarea class="form-control" name="paragraph2" rows="10" required><?php echo stripslashes ($about[1]['content']); ?></textarea>
+                              <textarea id="paragraph2" class="form-control" name="paragraph2" rows="10" required><?php echo $about[1]['content']; ?></textarea>
                               <p class="help-block"></p>
                           </div>
                       </div>
@@ -79,6 +79,14 @@
        });
    });
    </script>
+
+   <script src="<?= base_url('assets/ckeditor/ckeditor.js')?>"></script>
+   <script>
+     $(document).ready(function(){
+       editor = CKEDITOR.replace('paragraph1');
+       editor = CKEDITOR.replace('paragraph2');
+     });
+     </script>
 
 </body>
 
