@@ -82,6 +82,12 @@ class Data_lib {
 		return $CI->dataModel->updateTeamMemberImage($data, $id);
 	}
 
+	public function updateMenuItemImage($data, $id){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->updateMenuItemImage($data, $id);
+	}
+
 	public function updateTeamDescription($description){
 		$CI = &get_instance();
 		$CI->load->model('data_model','dataModel');

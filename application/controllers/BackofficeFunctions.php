@@ -391,7 +391,7 @@ class BackofficeFunctions extends CI_Controller {
 		$data = array(
 			'imageURL' => $imageURL
 		);
-		$result = $this->data_lib->addMenuItem($data, $itemID);
+		$result = $this->data_lib->updateMenuItemImage($data, $itemID);
 		if($result){
 			$this->session->set_flashdata('message', array('content'=>'Menu Item Image successfully Updated','color'=>'green'));
 			redirect(base_url('/backoffice/menuItems'));
