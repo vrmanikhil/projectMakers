@@ -73,7 +73,7 @@
                             <div class="control-group form-group">
                                 <div class="controls">
                                     <label>About:</label>
-                                    <textarea class="form-control" rows="10" name="about" required><?php echo stripslashes ($footerContent['about']); ?></textarea>
+                                    <textarea class="form-control" id="about" rows="10" name="about" required><?php echo $footerContent['about']; ?></textarea>
                                     <p class="help-block"></p>
                                 </div>
                             </div>
@@ -110,6 +110,13 @@
        });
    });
    </script>
+
+   <script src="<?= base_url('assets/ckeditor/ckeditor.js')?>"></script>
+   <script>
+     $(document).ready(function(){
+       editor = CKEDITOR.replace('about');
+     });
+     </script>
 
 </body>
 
