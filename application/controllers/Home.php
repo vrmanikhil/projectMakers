@@ -118,6 +118,7 @@ class Home extends CI_Controller {
 		$this->load->view('template', $vm);
 	}
 
+
 	public function contactUs(){
 		$name = '';
 		$email = '';
@@ -163,5 +164,26 @@ class Home extends CI_Controller {
 			redirect(base_url('/contact'));
 		}
 	}
+
+public function menu()
+{
+	$vm['assets'] = [
+		'css' => [
+			'/web-assets/css/bootstrap.min.css',
+			'/web-assets/css/base.css',
+			'/web-assets/css/menu.css'
+		],
+		'js' => [
+			'/web-assets/js/jquery.min.js',
+			'/web-assets/js/bootstrap.min.js',
+			'/web-assets/js/menu.js'
+		]
+	];
+	$vm['title'] = 'Menu For Order | Makers';
+	$vm['activePage'] = 'menu';
+	$vm['body'] = $this->load->view('pages/menu', '', TRUE);
+	$this->load->view('template', $vm);
+}
+
 
 }

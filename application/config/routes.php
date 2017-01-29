@@ -69,4 +69,5 @@ $route['backoffice/changePassword'] = 'backoffice/changePassword';
 $route['about'] = 'home/about';
 $route['team'] = 'home/team';
 $route['contact'] = 'home/contact';
+$route['menu'] = 'home/menu';
 $route['translate_uri_dashes'] = FALSE;
