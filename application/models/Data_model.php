@@ -209,6 +209,10 @@ class Data_model extends CI_Model {
 		return $this->db->insert('menuCategories',$data);
 	}
 
+	public function contactUs($data){
+		return $this->db->insert('contactUs',$data);
+	}
+
 	public function addMenuItem($data){
 		return $this->db->insert('menuItems',$data);
 	}

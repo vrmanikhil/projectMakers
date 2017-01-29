@@ -244,6 +244,12 @@ class Data_lib {
 		return $CI->dataModel->addTeamMember($data);
 	}
 
+	public function contactUs($data){
+		$CI = &get_instance();
+		$CI->load->model('data_model','dataModel');
+		return $CI->dataModel->contactUs($data);
+	}
+
 	public function addTestimonial($data){
 		$CI = &get_instance();
 		$CI->load->model('data_model','dataModel');
