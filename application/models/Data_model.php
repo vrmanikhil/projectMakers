@@ -91,6 +91,11 @@ class Data_model extends CI_Model {
 		return $this->db->update('homeContent', $data);
 	}
 
+	public function updateMenuItemImage($data, $id){
+		$this->db->where('itemID', $id);
+		return $this->db->update('menuItems', $data);
+	}
+
 	public function updateImage($imageURL, $id){
 		$query = "UPDATE images SET imageURL='$imageURL' WHERE id='$id'";
 		return $this->db->query($query);
