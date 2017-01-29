@@ -240,46 +240,43 @@ footer {
 		width: 100%;
 		border: 1px solid #ddd;
 	}
-
 	.header__company-logo {
 		text-align: center;
 		margin-bottom: 10px;
 	}
-
 	.navbar-toggle {
 		margin-right: 10px;
 		border-radius: 0;
 	}
-
 	.container-fluid>.navbar-header,
 	.container-fluid>.navbar-collapse {
 		margin-right: 0;
 		margin-left: 0;
 	}
-
 	.header-bar__item {
 		width: 100%;
 		text-align: center;
 		margin-bottom: 10px;
 	}
-
 	.header-bar__item:last-child {
 		margin-bottom: 0;
 	}
-
 	.footer-section {
 		width: 100%;
 		max-width: 300px;
 		margin: 20px 0;
 	}
-
 	.jumbotron-main {
 		min-height: 60vw;
 	}
-
 	.header {
 		padding: 15px;
 	}
+}
+
+.subscribe-form__msg {
+	margin: -8px 0 10px;
+	font-size: 14px;
 }
 
 @media(max-width: 767px) {
@@ -287,7 +284,6 @@ footer {
 		margin: 0px -15px;
 		border-top: 1px solid #ddd;
 	}
-
 	.navbar-brand {
 		display: block;
 	}

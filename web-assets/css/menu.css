@@ -54,6 +54,7 @@
 .products {
 	margin: 50px auto;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .product {

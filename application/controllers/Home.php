@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('url'));
 		$this->load->library(array('data_lib','session'));
+		$this->subScribeMsg = $this->session->flashdata('subScribeMsg');
 	}
 
 	public function index()
@@ -39,6 +40,7 @@ class Home extends CI_Controller {
 		$vm['headerContent'] = $vm['headerContent'][0];
 		$vm['footerContent'] = $this->data_lib->getFooterContent();
 		$vm['footerContent'] = $vm['footerContent'][0];
+		$vm['subScribeMsg'] = $this->subScribeMsg;
 		$this->load->view('template', $vm);
 	}
 
@@ -66,6 +68,7 @@ class Home extends CI_Controller {
 		$vm['headerContent'] = $vm['headerContent'][0];
 		$vm['footerContent'] = $this->data_lib->getFooterContent();
 		$vm['footerContent'] = $vm['footerContent'][0];
+		$vm['subScribeMsg'] = $this->subScribeMsg;
 		$this->load->view('template', $vm);
 	}
 
@@ -95,6 +98,7 @@ class Home extends CI_Controller {
 		$vm['headerContent'] = $vm['headerContent'][0];
 		$vm['footerContent'] = $this->data_lib->getFooterContent();
 		$vm['footerContent'] = $vm['footerContent'][0];
+		$vm['subScribeMsg'] = $this->subScribeMsg;
 		$this->load->view('template', $vm);
 	}
 
@@ -122,6 +126,7 @@ class Home extends CI_Controller {
 		$vm['headerContent'] = $vm['headerContent'][0];
 		$vm['footerContent'] = $this->data_lib->getFooterContent();
 		$vm['footerContent'] = $vm['footerContent'][0];
+		$vm['subScribeMsg'] = $this->subScribeMsg;
 		$this->load->view('template', $vm);
 	}
 
@@ -205,6 +210,7 @@ class Home extends CI_Controller {
 		$vm['headerContent'] = $vm['headerContent'][0];
 		$vm['footerContent'] = $this->data_lib->getFooterContent();
 		$vm['footerContent'] = $vm['footerContent'][0];
+		$vm['subScribeMsg'] = $this->subScribeMsg;
 		$this->load->view('template', $vm);
 	}
 
@@ -214,11 +220,11 @@ class Home extends CI_Controller {
 			$email = $x;
 		}
 		if($email == ''){
-			$this->session->set_flashdata('message', array('content'=>'Incomplete Data','color'=>'red'));
+			$this->session->set_flashdata('subScribeMsg', array('content'=>'Incomplete Data','color'=>'red'));
 			redirect(base_url());
 		}
 		if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-			$this->session->set_flashdata('message', array('content'=>'There is some error with your E-Mail Address Format','color'=>'red'));
+			$this->session->set_flashdata('subScribeMsg', array('content'=>'There is some error with your E-Mail Address Format','color'=>'red'));
 			redirect(base_url());
 		}
 		$data = array(
@@ -226,16 +232,16 @@ class Home extends CI_Controller {
 		);
 		$check = $this->data_lib->emailExist($email);
 		if(!empty($check)){
-			$this->session->set_flashdata('message', array('content'=>'You are already subscribed to our newsletters','color'=>'red'));
+			$this->session->set_flashdata('subScribeMsg', array('content'=>'You are already subscribed to our newsletters','color'=>'red'));
 			redirect(base_url());
 		}
 		$result = $this->data_lib->subscribeNewsletter($data);
 		if($result){
-			$this->session->set_flashdata('message', array('content'=>'Newsletter Subscribtion Successful','color'=>'green'));
+			$this->session->set_flashdata('subScribeMsg', array('content'=>'Newsletter Subscribtion Successful','color'=>'green'));
 			redirect(base_url());
 		}
 		else{
-			$this->session->set_flashdata('message', array('content'=>'Something Went Wrong','color'=>'red'));
+			$this->session->set_flashdata('subScribeMsg', array('content'=>'Something Went Wrong','color'=>'red'));
 			redirect(base_url());
 		}
 	}

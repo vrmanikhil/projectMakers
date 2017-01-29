@@ -99,6 +99,15 @@
 						<div class="form-group">
 							<input type="email" name="email" required class="form-control subscribe-form__email" placeholder="Enter Email Address :)">
 							<input type="hidden" name="<?php echo $csrf_token_name; ?>" value="<?php echo $csrf_token; ?>">
+							<?php
+								if (isset($subScribeMsg)) {
+								$cls = ($subScribeMsg['color'] === 'green') ? 'text-success' : '';
+								$cls = ($subScribeMsg['color'] === 'red') ? 'text-danger' : $cls;
+							?>
+								<p class="<?php echo $cls ?> subscribe-form__msg text-center"><?php echo $subScribeMsg['content'] ?></p>
+							<?php
+								}
+							?>
 							<input type="submit" name="submit" class="btn btn-primary subscribe-form__btn" value="Subscribe to Newsletter">
 						</div>
 					</form>
