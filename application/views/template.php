@@ -92,8 +92,8 @@
 					<p class="footer-section__title">Let's be friends!</p>
 					<div class="footer__social-links flex">
 						<a href="<?php echo $footerContent['facebook']; ?>" class="footer__social-link"><img src="/web-assets/image/fb.png"></a>
-						<a href="<?php echo $footerContent['twitter']; ?>" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
-						<a href="<?php echo $footerContent['instagram']; ?>" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
+						<a href="<?php echo $footerContent['instagram']; ?>" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
+						<a href="<?php echo $footerContent['twitter']; ?>" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
 					</div>
 					<form class="subscribe-form" method="post" action="<?php echo base_url('/home/subscribeNewsletter') ?>">
 						<div class="form-group">
