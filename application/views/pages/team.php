@@ -13,7 +13,7 @@
 				<div class="team-member__desc text-center">
 					<p class="team-member__name"><?php echo $value['name']; ?></p>
 					<p class="team-member__role"><?php echo $value['role']; ?></p>
-					<p class="team-member__about"><?php echo $value['description']; ?></p>
+					<div class="team-member__about"><?php echo $value['description']; ?></div>
 				</div>
 			</div>
 			<?php } ?>

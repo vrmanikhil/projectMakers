@@ -26,7 +26,7 @@
 
 .team-member__pic,
 .team-member__desc {
-	border: 4px solid #000;
+	border: 2px solid #000;
 }
 
 .team-member__desc {
@@ -45,6 +45,7 @@
 
 .team-member__about {
 	margin-bottom: 20px;
+	font-size: 0.89em;
 }
 
 .team-member {

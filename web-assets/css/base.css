@@ -1,8 +1,12 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	min-height: 100vh;
-	letter-spacing: 2px;
+	letter-spacing: 1.5px;
 	font-size: 18px;
+}
+
+body.flex.flex-col {
+	flex-wrap: nowrap;
 }
 
 .fixed-width-container {
@@ -17,6 +21,16 @@ p {
 
 h1 {
 	font-size: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 0;
 }
 
 .flex {
@@ -73,6 +87,7 @@ footer {
 
 .header-bar__ph {
 	flex-grow: 1;
+	text-align: right;
 }
 
 .header-bar__ph > img {
@@ -82,7 +97,6 @@ footer {
 
 .header {
 	align-items: center;
-	padding: 15px 15px 10px;
 }
 
 .navbar-default .navbar-collapse {
@@ -114,9 +128,10 @@ footer {
 .header__nav-link:focus {
 	color: #000;
 	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 0.89em;
+	/*font-weight: bold;*/
+	/*font-size: 0.89em;*/
 	/*margin-right: 15px;*/
+	font-size: 14px;
 	text-decoration: none;
 }
 
@@ -130,6 +145,10 @@ footer {
 
 .header__company-logo > a {
 	display: inline-block;
+}
+
+.header-bar__item {
+	font-weight: bold;
 }
 
 .footer-section {
@@ -151,12 +170,14 @@ footer {
 
 .footer__about-us-content:last-child {
 	margin-bottom: 0;
+	font-weight: bold;
 }
 
 .footer-section__title {
 	text-transform: uppercase;
 	font-weight: bold;
 	color: #f24c4c;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .footer__quick-link,
@@ -167,6 +188,7 @@ footer {
 	text-align: center;
 	margin-bottom: 5px;
 	color: #000;
+	font-weight: bold;
 }
 
 .footer__quick-link:hover,
@@ -216,6 +238,7 @@ footer {
 	font-size: 2em;
 	margin: 10px;
 	color: #fff;
+	text-transform: uppercase;
 }
 
 .jumbotron-main {
@@ -228,9 +251,38 @@ footer {
 	justify-content: center;
 }
 
+@media(min-width: 768px) {
+	.navbar-collapse {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.navbar-nav>li:last-child a{
+		padding-right: 0;
+	}
+}
+
+@media(min-width: 960px) {
+	.header {
+		padding: 15px 10px 10px;
+	}
+	header .red-bg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 2;
+	}
+	body {
+		padding-top: 38px;
+	}
+}
+
 @media(max-width: 960px) {
 	.flex {
 		flex-wrap: wrap;
+	}
+	.header {
+		padding: 15px 15px 10px;
 	}
 }
 
