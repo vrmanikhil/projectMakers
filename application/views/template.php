@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,400,400i,500,500i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
 		<title><?php echo $title ?></title>
 		<?php //loading css assets ?>
 		<?php $css = isset($assets['css']) ? $assets['css'] : [] ?>
@@ -75,7 +76,7 @@
 			<div class="container-fluid fixed-width-container flex footer">
 				<div class="footer__about-us footer-section text-center">
 					<p class="footer-section__title">About us</p>
-					<p class="footer__about-us-content"><?php echo $footerContent['about']; ?></p>
+					<div class="footer__about-us-content"><?php echo $footerContent['about']; ?></div>
 				</div>
 				<div class="text-center footer-section">
 					<p class="footer-section__title">Know a little more</p>
@@ -91,9 +92,11 @@
 				<div class="text-center footer-section">
 					<p class="footer-section__title">Let's be friends!</p>
 					<div class="footer__social-links flex">
-						<a href="<?php echo $footerContent['facebook']; ?>" class="footer__social-link"><img src="/web-assets/image/fb.png"></a>
-						<a href="<?php echo $footerContent['instagram']; ?>" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
-						<a href="<?php echo $footerContent['twitter']; ?>" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
+
+						<a target="_blank" href="<?php echo $footerContent['facebook']; ?>" class="footer__social-link"><img src="/web-assets/image/fb.png"></a>
+						<a target="_blank" href="<?php echo $footerContent['twitter']; ?>" class="footer__social-link"><img src="/web-assets/image/insta.png"></a>
+						<a target="_blank" href="<?php echo $footerContent['instagram']; ?>" class="footer__social-link"><img src="/web-assets/image/twitter.png"></a>
+
 					</div>
 					<form class="subscribe-form" method="post" action="<?php echo base_url('/home/subscribeNewsletter') ?>">
 						<div class="form-group">
