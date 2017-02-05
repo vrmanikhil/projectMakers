@@ -112,7 +112,8 @@ class Home extends CI_Controller {
 			],
 			'js' => [
 				'/web-assets/js/jquery.min.js',
-				'/web-assets/js/bootstrap.min.js'
+				'/web-assets/js/bootstrap.min.js',
+				'/web-assets/js/contact.js'
 			]
 		];
 		$vm['title'] = 'Contact Us | Makers';

@@ -10,9 +10,11 @@
 				</div>
 				<div class="form-group">
 					<input type="email" class="form-control" required name="email" placeholder="Email Address" autocomplete="email">
+					<p class="text-danger"></p>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="mobile" autocomplete="tel" pattern="[0-9]{10}" maxlength="10" class="form-control" placeholder="Contact Number">
+					<p class="text-danger"></p>
 				</div>
 				<div class="form-group">
 					<textarea rows="7" required name="message" class="form-control" placeholder="Your Message"></textarea>

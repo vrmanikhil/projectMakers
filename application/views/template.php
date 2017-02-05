@@ -102,6 +102,7 @@
 						<div class="form-group">
 							<input type="email" name="email" required class="form-control subscribe-form__email" placeholder="Enter Email Address :)">
 							<input type="hidden" name="<?php echo $csrf_token_name; ?>" value="<?php echo $csrf_token; ?>">
+							<p class="text-danger"></p>
 							<?php
 								if (isset($subScribeMsg)) {
 								$cls = ($subScribeMsg['color'] === 'green') ? 'text-success' : '';
@@ -123,5 +124,32 @@
 			<script src="<?php echo $item ?>"></script>
 		<?php endforeach;?>
 		<?php //************ ?>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var emailElem = $('.subscribe-form input[type="email"]');
+				var emailErrMsgElem = $('.subscribe-form input[type="email"]~.text-danger');
+				var emailErrMsg = 'Please enter a valid email id';
+				var keyUpEmailListener;
+				function validateEmail(email) {
+					var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+					return re.test(email);
+				}
+
+				function checkEmail() {
+					var email = emailElem.val();
+					if (!validateEmail(email)) {
+						if(!keyUpEmailListener) {
+							keyUpEmailListener = emailElem.on('keyup', checkEmail);
+						}
+
+						return emailErrMsgElem.text(emailErrMsg);
+					}
+
+					emailErrMsgElem.text('');
+				}
+
+				emailElem.on('focusout', checkEmail);
+			});
+		</script>
 	</body>
 </html>
